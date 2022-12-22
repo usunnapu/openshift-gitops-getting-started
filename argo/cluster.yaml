@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: cluster-configs
+  name: ndc-mgmt-namespace-app
   namespace: openshift-gitops
 spec:
   destination:
@@ -12,5 +12,5 @@ spec:
     directory:
       recurse: true
     path: cluster
-    repoURL: https://github.com/redhat-developer/openshift-gitops-getting-started.git
+    repoURL: https://github.com/usunnapu/openshift-gitops-getting-started.git
     targetRevision: mgmt
