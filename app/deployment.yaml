@@ -3,10 +3,6 @@ kind: Deployment
 metadata:
   labels:
     app: simple-deployment
-    app.kubernetes.io/component: simple-deployment
-    app.kubernetes.io/instance: simple-deployment
-    app.kubernetes.io/part-of: simple-deployment
-    app.openshift.io/runtime: redhat
   name: simple-deployment
   namespace: ndc-mgmt
 spec:
@@ -14,7 +10,6 @@ spec:
   selector:
     matchLabels:
       app: simple-deployment
-    type: Recreate
   template:
     metadata:
       labels:
