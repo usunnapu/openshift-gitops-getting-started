@@ -7,8 +7,7 @@ spec:
   replicas: 3
   selector:
     matchLabels:
-      labels:
-        app: simple-deployment
+      app: simple-deployment
   template:
     metadata:
       labels:
