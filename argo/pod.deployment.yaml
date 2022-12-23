@@ -1,0 +1,22 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: ndc-mgmt-deploy-pods
+  namespace: openshift-gitops
+spec:
+  destination:
+    namespace: ndc-mgmt
+    server: https://kubernetes.default.svc
+  project: default
+  source:
+    directory:
+      recurse: true
+    path: applications/pod-deployment/overlays/ndcmgmt
+    repoURL: https://github.com/usunnapu/openshift-gitops-getting-started.git
+    targetRevision: mgmt
+  syncPolicy:
+    syncOptions:
+    - CreateNamespace=true
+    automated:
+      prune: true
+      selfHeal: true
